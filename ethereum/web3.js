@@ -1,4 +1,4 @@
-const environment = require('./../environments/environment') ;
+const { environment } = require('./../environments/environment') ;
 const Web3 = require('web3') ;
 
 let web3 ;
