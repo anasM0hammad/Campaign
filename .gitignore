@@ -2,3 +2,4 @@ node_modules
 ADDRESS.json
 environments
 .next
+package-lock.json

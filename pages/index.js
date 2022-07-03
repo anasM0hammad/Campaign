@@ -2,6 +2,7 @@ import { useState } from 'react' ;
 import factory from './../ethereum/factory' ;
 import { Card, Button } from 'semantic-ui-react' ;
 import Layout from './../components/Layout' ;
+import { Router } from './../routes' ;
 
 const CampaignIndex = (props) => {
 
@@ -17,9 +18,13 @@ const CampaignIndex = (props) => {
 		return <Card.Group items={campaigns} />
 	}
 
+	const addCampaignHandler = () => {
+		Router.pushRoute('/campaigns/new') ;
+	}
+
 	return (
 		<Layout>
-			<Button primary content="Add Campaign" icon="add circle" floated="right"/>
+			<Button primary onClick={addCampaignHandler} content="Add Campaign" icon="add circle" floated="right"/>
 			{renderCampaigns()}
 		</Layout>
 	)

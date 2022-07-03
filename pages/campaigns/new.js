@@ -3,6 +3,7 @@ import Layout from './../../components/Layout' ;
 import { Form, Button, Input, Message } from 'semantic-ui-react' ;
 import factory from './../../ethereum/factory' ;
 import web3 from './../../ethereum/web3' ;
+import { Link, Router } from './../../routes' ;
 
 const CampaignNew = (props) => {
 	const [minimumContribution, setMinContribution] = useState('') ;	
@@ -22,6 +23,7 @@ const CampaignNew = (props) => {
 			await factory.methods.createCampaign(minimumContribution).send({
 				from : accounts[0]	// METAMASK WILL CALCULATE THE GAS FEE FOR THE USER
 			}) ;
+			Router.pushRoute('/') ;
 		}
 		catch(err){
 			setErrMsg(err.message) ;
