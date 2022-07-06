@@ -2,7 +2,7 @@ import { useState } from 'react' ;
 import factory from './../ethereum/factory' ;
 import { Card, Button } from 'semantic-ui-react' ;
 import Layout from './../components/Layout' ;
-import { Router } from './../routes' ;
+import { Router, Link } from './../routes' ;
 
 const CampaignIndex = (props) => {
 
@@ -10,7 +10,7 @@ const CampaignIndex = (props) => {
 		const campaigns = props.campaigns.map(address => {
 			return {
 				header : address,
-				description : <a>View Campaign</a> ,
+				description : <Link route={`/campaigns/${address}`}><a>View Campaign</a></Link> ,
 				fluid : true
 			};
 		}) ;

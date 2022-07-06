@@ -1,10 +1,10 @@
-const environment = require('./../environments/environment') ;
+const { environment } = require('./../environments/environment') ;
 const HDWalletProvider = require('@truffle/hdwallet-provider') ;
 const Web3 = require('web3') ;
 
 const factoryCampaign = require('./build/CampaignFactory.json') ;
 
-const accountMnemonics = environment.accountMnemonics ;   // Should be passed using env variable in production 
+const accountMnemonics = environment.accountsMnemonics ;   // Should be passed using env variable in production 
 const infuraNet = environment.infuraNode ;
 
 const HdProvider = new HDWalletProvider(accountMnemonics, infuraNet) ;
